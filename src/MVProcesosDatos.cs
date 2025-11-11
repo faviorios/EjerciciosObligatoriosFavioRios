@@ -33,7 +33,9 @@ namespace EjerciciosObligatoriosFavioRios.src
         {
             if(string.IsNullOrEmpty(this.datosDestino) || string.IsNullOrEmpty(this.datosOrigen))
             {
-                Console.WriteLine("No se puede encender la MV de Procesos de Datos. Faltan datos obligatorios");
+                Console.WriteLine("-------------------------------------------------------");
+                Console.WriteLine($"No se puede encender la MV de Datos: {base.nombre}. Faltan datos obligatorios");
+                Console.WriteLine("-------------------------------------------------------\n");
             }
             else
             {
@@ -47,10 +49,13 @@ namespace EjerciciosObligatoriosFavioRios.src
         }
         public override void Apagar()
         {
-            Console.WriteLine("-------------------------------------------------------");
-            Console.WriteLine($"Apagando MV de Procesos de Datos: {base.nombre}");
-            Console.WriteLine("-------------------------------------------------------\n");
-            estado = false;
+            if (estado)
+            {
+                Console.WriteLine("-------------------------------------------------------");
+                Console.WriteLine($"Apagando MV de Procesos de Datos: {base.nombre}");
+                Console.WriteLine("-------------------------------------------------------\n");
+                estado = false;
+            }
         }
     }
 }
