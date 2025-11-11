@@ -13,6 +13,14 @@ namespace EjerciciosObligatoriosFavioRios.src
         protected string version;
         protected bool estado;
 
+        public MaquinaVirtual(string nombre, string sistemaOperativo, string version)
+        {
+            this.nombre = nombre;
+            this.sistemaOperativo = sistemaOperativo;
+            this.version = version;
+            estado = false;
+        }
+
         public abstract void Encender();
         public abstract void Apagar();
     }
